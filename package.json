@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "vercel-build": "echo 'Vercel build complete'",
+    "local": "NODE_ENV=development node index.js"
   },
   "dependencies": {
     "alzheimer-detection-backend": "file:",
