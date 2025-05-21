@@ -8,6 +8,6 @@ import {
 const router = express.Router();
 
 router.post("/", createRiskAnalysis);
-router.get("/", getAllRiskAnalysis);
+router.get("/:userId", getAllRiskAnalysis);
 
 export default router;

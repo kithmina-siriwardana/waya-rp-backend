@@ -36,7 +36,9 @@ export const createRiskAnalysis = async (req, res) => {
 
 export const getAllRiskAnalysis = async (req, res) => {
   try {
-    const riskAnalysis = await RiskAnalysis.find().sort({ createdAt: -1 });
+    const riskAnalysis = await RiskAnalysis.find({
+      userId: req.params.userId,
+    }).sort({ createdAt: -1 });
     res.status(200).json(riskAnalysis);
   } catch (error) {
     console.error("Risk Analysis Error:", error);

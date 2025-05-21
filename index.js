@@ -8,7 +8,7 @@ import predictionRoutes from "./routes/predictionRoutes.js";
 import riskAnalysisRoutes from "./routes/riskAnalysisRoutes.js";
 import emotionFaceRoutes from "./routes/emotionFaceRoutes.js";
 import emotionSpeechRoutes from "./routes/emotionSpeechRoutes.js";
-
+import memoryRoutes from "./routes/memoryRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -25,9 +25,9 @@ connectDB();
 app.use("/api/auth", authRoutes);
 app.use("/api/predictions", predictionRoutes);
 app.use("/api/predict/analyze-risk", riskAnalysisRoutes);
-
 app.use("/api/predict/analyze-face", emotionFaceRoutes);
 app.use("/api/predict/analyze-speech", emotionSpeechRoutes);
+app.use("/api/memories", memoryRoutes);
 
 // Error handling
 app.use((err, _req, res, _next) => {
