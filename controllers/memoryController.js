@@ -20,7 +20,9 @@ export const createMemory = async (req, res) => {
 
 export const getAllMemories = async (req, res) => {
   try {
-    const memories = await Memory.find({ userId: req.params.userId });
+    const memories = await Memory.find({ userId: req.params.userId }).sort({
+      createdAt: -1,
+    });
     res.status(200).json(memories);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -32,7 +34,7 @@ export const getAllMemoriesWithImages = async (req, res) => {
     const memories = await Memory.find({
       userId: req.params.userId,
       imageUrl: { $ne: null },
-    });
+    }).sort({ createdAt: -1 });
     res.status(200).json(memories);
   } catch (error) {
     res.status(500).json({ error: error.message });
