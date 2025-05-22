@@ -3,7 +3,6 @@ import {
   createRiskAnalysis,
   getAllRiskAnalysis,
 } from "../controllers/riskAnalysisController.js";
-// import { auth } from "../middleware/auth.js";
 
 const router = express.Router();
 
